@@ -1,7 +1,5 @@
 #include <iostream>
-
 #include <vector>
-
 #include "containers.h"
 
 int main(int, char **)
@@ -19,8 +17,9 @@ int main(int, char **)
 
         for ( size_t i = 0 ; i < sequence_container.size() ; ++i )
         {
-            std::cout << sequence_container[ i ] << std::endl;
+            std::cout << sequence_container[ i ] << " ";  // ← БЫЛО: << std::endl
         }
+        std::cout << std::endl;  // ← ДОБАВЛЕНО: перенос после всего вывода
 
         std::cout << "sequence_container size: " << sequence_container.size() << std::endl;
 
@@ -30,33 +29,35 @@ int main(int, char **)
 
         for ( size_t i = 0 ; i < sequence_container.size() ; ++i )
         {
-            std::cout << sequence_container[ i ] << std::endl;
+            std::cout << sequence_container[ i ] << " ";  // ← ИЗМЕНЕНО
         }
+        std::cout << std::endl;  // ← ДОБАВЛЕНО
 
         sequence_container.insert( 0 , 10 );
 
         for ( size_t i = 0 ; i < sequence_container.size() ; ++i )
         {
-            std::cout << sequence_container[ i ] << std::endl;
+            std::cout << sequence_container[ i ] << " ";  // ← ИЗМЕНЕНО
         }
+        std::cout << std::endl;  // ← ДОБАВЛЕНО
 
         sequence_container.insert( (size_t)( sequence_container.size() / 2 - 0.5 ) , 20 );
 
         for ( auto iter = sequence_container.begin() ; iter != sequence_container.end() ; ++iter )
         {
-            std::cout << *iter << std::endl;
+            std::cout << *iter << " ";  // ← ИЗМЕНЕНО
         }
+        std::cout << std::endl;  // ← ДОБАВЛЕНО
 
         sequence_container.push_back( 30 );
         
         for ( auto iter = sequence_container.begin() ; iter != sequence_container.end() ; ++iter )
         {
-            std::cout << *iter << std::endl;
+            std::cout << *iter << " ";  // ← ИЗМЕНЕНО
         }
+        std::cout << std::endl;  // ← ДОБАВЛЕНО
 
         std::cout << std::endl;
-
-        //----------------------------------------------------------
 
         ListContainer< int > list_container;
 
@@ -69,36 +70,41 @@ int main(int, char **)
 
         for ( size_t i = 0 ; i < list_container.size() ; ++i )
         {
-            std::cout << list_container[ i ] << std::endl;
+            std::cout << list_container[ i ] << " ";  // ← ИЗМЕНЕНО
         }
+        std::cout << std::endl;  // ← ДОБАВЛЕНО
 
         std::cout << "list_container size: " << list_container.size() << std::endl;
 
         for ( size_t i = 0 ; i < list_container.size() ; ++i )
         {
-            std::cout << list_container[ i ] << std::endl;
+            std::cout << list_container[ i ] << " ";  // ← ИЗМЕНЕНО
         }
+        std::cout << std::endl;  // ← ДОБАВЛЕНО
 
         list_container.insert( 0 , 10 );
 
         for ( size_t i = 0 ; i < list_container.size() ; ++i )
         {
-            std::cout << list_container[ i ] << std::endl;
+            std::cout << list_container[ i ] << " ";  // ← ИЗМЕНЕНО
         }
+        std::cout << std::endl;  // ← ДОБАВЛЕНО
 
         list_container.insert( (size_t)( list_container.size() / 2 - 0.5 ) , 20 );
 
         for ( auto iter = list_container.begin() ; iter != list_container.end() ; ++iter )
         {
-            std::cout << *iter << std::endl;
+            std::cout << *iter << " ";  // ← ИЗМЕНЕНО
         }
+        std::cout << std::endl;  // ← ДОБАВЛЕНО
 
         list_container.push_back( 30 );
 
         for ( auto iter = list_container.begin() ; iter != list_container.end() ; ++iter )
         {
-            std::cout << *iter << std::endl;
+            std::cout << *iter << " ";  // ← ИЗМЕНЕНО
         }
+        std::cout << std::endl;  // ← ДОБАВЛЕНО
     }
     catch(const std::exception &e)
     {
