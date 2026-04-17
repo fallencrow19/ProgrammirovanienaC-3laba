@@ -1,0 +1,35 @@
+{
+    "version": 2,
+    "configurePresets": [
+        {
+            "name": "MSVC",
+            "generator": "Visual Studio 17 2022",
+            "displayName": "MSVC",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "environment": {
+                "VCPKG_ROOT": "C:/vcpkg"
+            },
+            "cacheVariables": {
+                "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/install/${presetName}",
+                "CMAKE_C_COMPILER": "cl",
+                "CMAKE_CXX_COMPILER": "cl",
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "GCC",
+            "generator": "Ninja",
+            "displayName": "GCC",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "environment": {
+            },
+            "cacheVariables": {
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/install/${presetName}",
+                "CMAKE_C_COMPILER": "gcc",
+                "CMAKE_CXX_COMPILER": "g++",
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        }
+    ]
+}
